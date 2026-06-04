@@ -27,17 +27,19 @@ Parameter space scanning
 Data loading/saving utilities
 All other scripts import from this!
 
+
 # Application Scripts (Run These!)
 scan_weyl_space.py         ← Scan H parameters → Weyl chamber
 weyl_analyzer.py           ← Analysis functions (visualization, transitions)
 example_usage.py           ← Examples of how to use everything
 
 
+
 # 🎯 How to Use
 1. Configure and Run Scanner
   Edit scan_weyl_space.py lines 17-24:
   
-  # CHANGE THESE TO CONFIGURE GRID
+  **CHANGE THESE TO CONFIGURE GRID**
   N_TAU = 15      # Time points
   N_DELTA = 12    # Detuning points  
   N_OMEGA1 = 12   # Drive 1 points
@@ -81,6 +83,7 @@ example_usage.py           ← Examples of how to use everything
   
   Save transitions
   save_dataframe(transitions, "transitions.csv")
+  
 3. Compute Single Point
   from topoqgate_core import map_params_to_weyl, map_params_to_topology
   
@@ -150,7 +153,9 @@ from my_analysis import my_sensitivity_analysis
 
 df = load_weyl_data("weyl_mapping_data.csv", add_topology=True)
 results = my_sensitivity_analysis(df)
-📊 Data Files
+
+
+# 📊 Data Files
 Input Data
 weyl_mapping_data.csv          ← Raw H→Weyl mapping (from scanner)
 Columns: tau, delta, omega1, omega2, alpha, beta, gamma
